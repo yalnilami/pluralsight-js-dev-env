@@ -59,3 +59,5 @@ typings/
 
 # my local ignores
 package-lock.json
+ChessGame/
+referenceServer.js
