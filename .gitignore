@@ -61,3 +61,5 @@ typings/
 package-lock.json
 ChessGame/
 referenceServer.js
+#this file is generated automatically when running generate-mock-data script
+db.json
