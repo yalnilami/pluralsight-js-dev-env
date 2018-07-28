@@ -63,3 +63,5 @@ ChessGame/
 referenceServer.js
 #this file is generated automatically when running generate-mock-data script
 db.json
+# the files in dist are generated automatically in the production build proces
+dist/

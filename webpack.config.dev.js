@@ -1,4 +1,5 @@
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	debug: true,	//enables debugging info while running build
@@ -13,7 +14,13 @@ export default {
 		publicPath: '/',						//note that webpack wonn't actually write files; simulates the existence of the file in memory
 		filename: 'bundle.js'					//we'll change this later when creating our deployment bundle.
 	},
-	plugins: [],
+	plugins: [
+		// Create HTML file that includes reference to our bundled javascript code.
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			inject: true // automatically inject any necessary scripts into our html. removes need for <script src="bundle.js"></script> in our index.html
+		})
+	],
 	module: {
 		loaders: [	//tell webpack how to handle different file types;
 			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
